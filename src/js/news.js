@@ -1,3 +1,4 @@
+import axios from 'axios';
 const KEY = '834e5c777b504c48a337b01b262c10d5';
 let timer = null;
 const params = new URLSearchParams({
@@ -42,9 +43,9 @@ function infiniteScroll() {
 }
 
 function findFetch(params) {
-  fetch(`https://newsapi.org/v2/top-headlines?${params}`).then(response =>
-    response.json().then(data => fetchData(data))
-  );
+  axios
+    .get(`https://newsapi.org/v2/top-headlines?${params}`)
+    .then(response => fetchData(response.data));
 }
 
 function fetchData(items) {
