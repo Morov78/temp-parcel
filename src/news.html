@@ -8,8 +8,27 @@
     <link rel="stylesheet" href="css/news.css" />
   </head>
   <body>
-    <a href="index.html">Go back</a>
-    <span class="js-output-total"></span>
+    <div class="nav">
+      <a href="index.html">Go back</a>
+      <form class="form">
+        <select>
+          <option value="general">general</option>
+          <option value="business">business</option>
+
+          <option value="entertainment">entertainment</option>
+          <option value="health">health</option>
+          <option value="science">science</option>
+          <option value="sports">sports</option>
+          <option value="technology">technology</option>
+        </select>
+        <button class="form__button" type="submit">Пошук</button>
+      </form>
+      <p class="js-output is-hidden">
+        <span class="js-output-item"></span> з
+        <span class="js-output-total"></span>
+      </p>
+    </div>
+
     <ul class="list js-articles"></ul>
 
     <script src="js/news.js" type="module"></script>
